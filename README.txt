@@ -4,7 +4,7 @@ BIT2044 Web Technologies | Academic prototype
 HOW TO RUN
 1. Extract the ZIP.
 2. Open index.html in Chrome, Edge, or Firefox.
-3. Navigate to Import Stock and click Load sample data, or import sample/sample_live_stock.csv.
+3. Navigate to Import Stock and import an authorized current Live Stock CSV or Excel file.
 4. Go to Stock Verification, enter a date, checker and verifier names, and ALL physical counts.
 5. Choose Remarks, enter defective quantities/notes if applicable, then Save after the final review.
 6. Open Stocktake Report and download the genuine Excel (.xlsx) report. Open the workbook, recheck, save, then attach it to your email manually.
@@ -36,7 +36,7 @@ STATUS LOGIC
 - Defective is recorded separately and may occur even when counts tally.
 - Remarks are selected by the user and are not proof of a confirmed loss.
 
-NOTE: Demonstration sample product names and quantities are illustrative.
+UAT V2.1.1: No bundled sample data. Previous built-in demo reference and draft are cleared; demo sessions are excluded. Existing genuine saved sessions remain.
 
 
 STOCK COUNT CALCULATOR (UPDATE)
@@ -72,7 +72,11 @@ IMPORTANT: SINGLE-FILE NAVIGATION FIX
 Open ONLY index.html. All five screens are available via the sidebar in this one file.
 Do not open catalogue.html, import.html, verification.html or report.html:
 these are now logical screens in index.html, to keep browser storage shared.
-Import the sample Excel again in this version (previous file:// page-specific
+Import the Live Stock file again in this version (previous file:// page-specific
 localStorage may not be accessible from this new entry point).
 After import, Stock Verification must show the same product count and source.
 Always keep the folder together; do not move index.html away from assets.
+
+IMPORT VALIDATION UPDATE: Only .csv, .xlsx and .xls accepted. Empty files and files over 10 MB rejected. Excel requires SheetJS CDN connectivity. This is a browser prototype; test with simulated stock data.
+
+V2 prototype: Master Excel export. Open index.html with internet access. Import stock, count all products, save session, choose completed session in Stocktake Report, select authorized master XLSX and reference worksheet, enter Pitstop, export. Use a test date not already present in master. Original workbook is not overwritten. Current template limit: 91 products. Existing worksheet XML parts are not rewritten; workbook metadata and calculation chain are updated. Printer settings of new sheet may differ. Browser export has not been end-to-end tested. Do not use operationally until verified in Microsoft Excel. Third-party scripts load from CDNs; obtain authorization before importing real company data. No real company files included in ZIP.
